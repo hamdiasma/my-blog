@@ -64,3 +64,7 @@ hr {
   width:200px ;
   color: #009688;
 }
+/*not-found*/
+.not-found{
+  margin:30px auto;
+}

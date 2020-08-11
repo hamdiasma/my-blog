@@ -1,6 +1,7 @@
 import React from "react";
 import articleContent from "./article-content";
 import ArticleList from "../components/ArticleList";
+import PageNotFound from "./PageNotFound";
 
 const ArticlePage = (props) => {
   console.log(props);
@@ -15,7 +16,7 @@ const ArticlePage = (props) => {
   );
 
   if (!article) {
-    return <h3>Page Not Found.?</h3>;
+    return <PageNotFound/>;
   }
 
   return (
