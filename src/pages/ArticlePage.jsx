@@ -1,9 +1,9 @@
 import React from "react";
 import articleContent from "./article-content";
 
-const ArticlePage = ({ match }) => {
-  //   console.log(props);
-  const name = match.params.name;
+const ArticlePage = (props) => {
+    console.log(props);
+  const name = props.match.params.name;
 
   const article = articleContent.find(
     (artic) => artic.name.toLowerCase() === name
