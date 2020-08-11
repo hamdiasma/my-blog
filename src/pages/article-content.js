@@ -54,7 +54,7 @@ const articles = [
   },
   {
     name: "AngularJs",
-    title: "the fast way to learnangulajs",
+    title: "the fast way to learn angulajs",
     content: [
       `  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo a sunt,
             quasi odio quos mollitia cum pariatur illo in consectetur ad ipsum
@@ -70,7 +70,7 @@ const articles = [
   },
   {
     name: "MongoDB",
-    title: "the fast way to learnmongoDB",
+    title: "the fast way to learn mongoDB",
     content: [
       `  Lorem ipsum dolor sit quasi odio quos mollitia cum pariatur illo in consectetur ad ipsum
       voluptates eligendi quod exercitationem, debitis ipsam illum est amet consectetur adipisicing elit. Nemo a sunt,

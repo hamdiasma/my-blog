@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  height: 1500px;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -51,8 +52,15 @@ nav ul li a:hover {
   text-decoration: none;
   color: #333;
 }
-
+.article-pagarg{
+  line-height: 2;
+}
 hr {
-  height: 3px;
-  background: #009688;
+  height: 2px;
+  color: #009688;
+}
+.other-article{
+  border-bottom: 2px solid;
+  width:200px ;
+  color: #009688;
 }
