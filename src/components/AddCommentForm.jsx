@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddCommentForm = ({ articlename ,setArticleInfo}) => {
+const AddCommentForm = ({ articlename, setArticleInfo }) => {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
 
@@ -17,6 +17,8 @@ const AddCommentForm = ({ articlename ,setArticleInfo}) => {
     );
     const data = await result.json();
     setArticleInfo(data);
+    setName("");
+    setText("");
   };
 
   return (
