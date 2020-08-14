@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import articleContent from "./article-content";
 import ArticleList from "../components/ArticleList";
 import PageNotFound from "./PageNotFound";
 
 const ArticlePage = (props) => {
+  const [articleInfo, setAricleInfo] = useState({ upvotes: 0, comments: [] });
+
   console.log(props);
-  const name = props.match.params.name;
+  const name = props.match.params.name.toLowerCase();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`http://localhost:8001/api/${name.toLowerCase()}`);
+      const data = await response.json();
+      console.log(data)
+      setAricleInfo(data);
+    };
+    fetchData();
+   
+  }, [name]);
 
   const article = articleContent.find(
     (artic) => artic.name.toLowerCase() === name
@@ -16,14 +29,17 @@ const ArticlePage = (props) => {
   );
 
   if (!article) {
-    return <PageNotFound/>;
+    return <PageNotFound />;
   }
 
   return (
     <div>
       <h1>{article.title}</h1>
+      <p>this article has benn upvotes {articleInfo.upvotes} times</p>
       {article.content.map((paragraph, index) => (
-        <p className="article-pagarg" key={index}>{paragraph}</p>
+        <p className="article-pagarg" key={index}>
+          {paragraph}
+        </p>
       ))}
       <h2 className="other-article">Other articles :</h2>
       <ArticleList articles={otherAricles} />
