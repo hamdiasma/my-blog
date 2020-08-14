@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import articleContent from "./article-content";
 import ArticleList from "../components/ArticleList";
 import PageNotFound from "./PageNotFound";
+import CommentsList from "../components/CommentsList";
 
 const ArticlePage = (props) => {
   const [articleInfo, setAricleInfo] = useState({ upvotes: 0, comments: [] });
@@ -11,13 +12,14 @@ const ArticlePage = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:8001/api/${name.toLowerCase()}`);
+      const response = await fetch(
+        `http://localhost:8001/api/${name.toLowerCase()}`
+      );
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setAricleInfo(data);
     };
     fetchData();
-   
   }, [name]);
 
   const article = articleContent.find(
@@ -41,6 +43,7 @@ const ArticlePage = (props) => {
           {paragraph}
         </p>
       ))}
+      <CommentsList comments={articleInfo.comments} />
       <h2 className="other-article">Other articles :</h2>
       <ArticleList articles={otherAricles} />
     </div>
