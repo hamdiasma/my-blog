@@ -14,7 +14,7 @@ const ArticlePage = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:8001/api/${name}`);
+      const response = await fetch(`http://localhost:5020/api/${name}`);
       const data = await response.json();
       console.log(data);
       setAricleInfo(data);

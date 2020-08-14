@@ -6,7 +6,7 @@ const AddCommentForm = ({ articlename, setArticleInfo }) => {
 
   const handelSubmut = async () => {
     const result = await fetch(
-      `http://localhost:8001/api/${articlename}/comments`,
+      `http://localhost:5020/api/${articlename}/comments`,
       {
         method: "POST",
         body: JSON.stringify({ name, text }),
