@@ -3,6 +3,8 @@ import articleContent from "./article-content";
 import ArticleList from "../components/ArticleList";
 import PageNotFound from "./PageNotFound";
 import CommentsList from "../components/CommentsList";
+import UpvoteSection from "../components/UpvoteSection";
+import AddCommentForm from "../components/AddCommentForm";
 
 const ArticlePage = (props) => {
   const [articleInfo, setAricleInfo] = useState({ upvotes: 0, comments: [] });
@@ -12,9 +14,7 @@ const ArticlePage = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        `http://localhost:8001/api/${name.toLowerCase()}`
-      );
+      const response = await fetch(`http://localhost:8001/api/${name}`);
       const data = await response.json();
       console.log(data);
       setAricleInfo(data);
@@ -37,13 +37,18 @@ const ArticlePage = (props) => {
   return (
     <div>
       <h1>{article.title}</h1>
-      <p>this article has benn upvotes {articleInfo.upvotes} times</p>
+      <UpvoteSection
+        upvotes={articleInfo.upvotes}
+        name={name}
+        setAricleInfo={setAricleInfo}
+      />
       {article.content.map((paragraph, index) => (
         <p className="article-pagarg" key={index}>
           {paragraph}
         </p>
       ))}
       <CommentsList comments={articleInfo.comments} />
+      <AddCommentForm articlename={name} setArticleInfo={articleInfo}/>
       <h2 className="other-article">Other articles :</h2>
       <ArticleList articles={otherAricles} />
     </div>

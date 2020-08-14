@@ -5,7 +5,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -45,26 +44,76 @@ nav ul li a:hover {
   padding: 10px;
 }
 /*articles-list*/
-.title-articles-list{
+.title-articles-list {
   margin: 30px 0;
 }
 .article-page {
   text-decoration: none;
   color: #333;
 }
-.article-pagarg{
+.article-pagarg {
   line-height: 2;
 }
 hr {
   height: 2px;
   color: #009688;
 }
-.other-article{
+.other-article {
   border-bottom: 2px solid;
-  width:200px ;
+  width: 200px;
   color: #009688;
 }
 /*not-found*/
-.not-found{
-  margin:30px auto;
+.not-found {
+  margin: 30px auto;
+}
+.upvotes {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #777;
+  color: #fff;
+  width: 330px;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.number-upvote {
+  color: #ffc83d;
+  font-size: 20px;
+}
+.upvote-img {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.5s;
+}
+.upvote-img:hover {
+  transform: scale(1.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+input,
+button[type="submit"] {
+  margin: 5px 0;
+}
+input,
+button[type="submit"],
+textarea {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  outline: #009688;
+  border: 1px solid #009688;
+}
+
+button[type="submit"] {
+  background-color: #009688;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #009688;
 }

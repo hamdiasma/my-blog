@@ -4,7 +4,10 @@ const CommentsList = ({ comments }) => {
   const articleComments = comments.map((comment, index) => (
     <div key={index}>
       <h4>{comment.name}</h4>
-      <p>{comment.text}</p>
+      <p>
+        {comment.text} <span>{comment.date}</span>
+      </p>
+
       <hr />
     </div>
   ));
